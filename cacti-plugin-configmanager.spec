@@ -1,7 +1,7 @@
 %define		namesrc	configmanager
 %include	/usr/lib/rpm/macros.perl
-Summary:	Plugin for Cacti - for download/upload routers switches configuration
-#Summary(pl.UTF-8):	Wtyczka do Cacti -
+Summary:	Plugin for Cacti - download/upload routers and switches configuration
+Summary(pl.UTF-8):	Wtyczka do Cacti - ściąganie/wysyłanie konfiguracji routerów/switchy
 Name:		cacti-plugin-configmanager
 Version:	0.75
 Release:	0.1
@@ -20,23 +20,28 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		webcactipluginroot /usr/share/cacti/plugins/%{namesrc}
 
 %description
-Plugin for Cacti - configmanager
+With Cacti configmanager plugin you can easily schedule the
+download/upload of the configuration of your routers, switches and any
+devices (or change in one click some parameters of a hundred of
+switches... dangerous but possible now). It should function for all
+type of router or switches.
 
-With this plugin you can easily schedule the download/upload of the
-configuration of your routers, switches and any devices (or change in
-one click some parameters of hundert of switches ... dangerous but
-possible now). It should function for all type of router or switches.
-
-There is two method "TFTP" and "multi".
-- "TFTP" (based of "pancho" <www.pancho.org>) with option "pure PHP"
-  no need of pancho installation.
+There are two methods:
+- "TFTP" (based of "pancho" <http://www.pancho.org/>); with "pure PHP"
+  option there is no need of pancho installation
 - "multi" can use any scripts or SCP, FTP, SFTP or what you want.
 
-The syslog plugin and traps could active the download of the pancho
-config or script for the host which has received a specific event and
-which the "trap event flag" is active.
+%description -l pl.UTF-8
+Przy użyciu wtyczki Cacti configmanager można łatwo zaszeregować
+ściąganie lub wysyłanie konfiguracji routerów, switchy i innych
+urządzeń (lub zmieniać jednym kliknięciem pewne parametry w setce
+switchy... co jest niebezpieczne, ale teraz wykonalne). Wtyczka
+powinna działać z dowolnymi routerami i switchami.
 
-#%description -l pl.UTF-8 #Wtyczka do Cacti -
+Istnieją dwie metody:
+- "TFTP" (oparta na "pancho" <http://www.pancho.org/>); z opcją "pure
+  PHP" nie ma potrzeby instalacji pancho
+- "multi", potrafiąca używać dowolne skrypty lub SCP, FTP, SFTP
 
 %prep
 %setup -q -c -a1
