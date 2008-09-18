@@ -3,14 +3,14 @@
 Summary:	Plugin for Cacti - download/upload routers and switches configuration
 Summary(pl.UTF-8):	Wtyczka do Cacti - ściąganie/wysyłanie konfiguracji routerów/switchy
 Name:		cacti-plugin-configmanager
-Version:	0.75
-Release:	0.1
+Version:	0.76
+Release:	1
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	%{namesrc}%{version}.zip
-# Source0-md5:	b84133d0eb4b77cfa5159c414ea1f344
-Source1:	sharednetworkclass0.36.zip
-# Source1-md5:	bd899585510bff2aefbd892b00253a91
+# Source0-md5:	d3cdb035a4d47ff464916774dd953457
+Source1:	sharednetworkclass0.40.zip
+# Source1-md5:	b438751d7b696a10a8958ea6e0f407f3
 URL:		http://forums.cacti.net/about12406.html
 BuildRequires:	rpm-perlprov
 Requires:	cacti
