@@ -7,8 +7,10 @@ Version:	0.76
 Release:	1
 License:	GPL v2
 Group:		Applications/WWW
+# http://forums.cacti.net/download.php?id=6449
 Source0:	%{namesrc}%{version}.zip
 # Source0-md5:	d3cdb035a4d47ff464916774dd953457
+# http://forums.cacti.net/download.php?id=10980
 Source1:	sharednetworkclass0.40.zip
 # Source1-md5:	b438751d7b696a10a8958ea6e0f407f3
 URL:		http://forums.cacti.net/about12406.html
