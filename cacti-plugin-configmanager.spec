@@ -1,14 +1,16 @@
-%define		namesrc	configmanager
+# TODO
+# - source1 not used?!
+%define		plugin configmanager
 %include	/usr/lib/rpm/macros.perl
 Summary:	Plugin for Cacti - download/upload routers and switches configuration
 Summary(pl.UTF-8):	Wtyczka do Cacti - ściąganie/wysyłanie konfiguracji routerów/switchy
-Name:		cacti-plugin-configmanager
+Name:		cacti-plugin-%{plugin}
 Version:	0.76
 Release:	1
 License:	GPL v2
 Group:		Applications/WWW
 # http://forums.cacti.net/download.php?id=6449
-Source0:	%{namesrc}%{version}.zip
+Source0:	%{plugin}%{version}.zip
 # Source0-md5:	d3cdb035a4d47ff464916774dd953457
 # http://forums.cacti.net/download.php?id=10980
 Source1:	sharednetworkclass0.40.zip
@@ -19,7 +21,8 @@ Requires:	cacti
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		webcactipluginroot /usr/share/cacti/plugins/%{namesrc}
+%define		cactidir		/usr/share/cacti
+%define		plugindir		%{cactidir}/plugins/%{plugin}
 
 %description
 With Cacti configmanager plugin you can easily schedule the
@@ -46,22 +49,21 @@ Istnieją dwie metody:
 - "multi", potrafiąca używać dowolne skrypty lub SCP, FTP, SFTP
 
 %prep
-%setup -q -c -a1
+%setup -qc -a1
 
 # undos the source
 find '(' -name '*.php' -o -name '*.inc' ')' -print0 | xargs -0 sed -i -e 's,\r$,,'
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{webcactipluginroot}
+install -d $RPM_BUILD_ROOT%{plugindir}
 
-cd %{namesrc}%{version}
-cp -a * $RPM_BUILD_ROOT%{webcactipluginroot}
+cp -a %{plugin}%{version}/* $RPM_BUILD_ROOT%{plugindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc %{namesrc}%{version}/{Manual.txt,template.txt,configmanager_trap_list.txt}
-%{webcactipluginroot}
+%doc %{plugin}%{version}/{Manual.txt,template.txt,configmanager_trap_list.txt}
+%{plugindir}
