@@ -17,6 +17,7 @@ Source1:	sharednetworkclass0.40.zip
 # Source1-md5:	b438751d7b696a10a8958ea6e0f407f3
 URL:		http://forums.cacti.net/about12406.html
 BuildRequires:	rpm-perlprov
+BuildRequires:	unzip
 Requires:	cacti
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
