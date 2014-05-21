@@ -5,7 +5,7 @@ Summary:	Plugin for Cacti - download/upload routers and switches configuration
 Summary(pl.UTF-8):	Wtyczka do Cacti - ściąganie/wysyłanie konfiguracji routerów/switchy
 Name:		cacti-plugin-%{plugin}
 Version:	0.826
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/WWW
 # http://forums.cacti.net/download.php?id=6449
@@ -20,10 +20,10 @@ BuildRequires:	rpmbuild(macros) >= 1.553
 BuildRequires:	unzip
 Requires:	cacti
 Requires:	cacti(pia) >= 2.0
-Requires:	php-common >= 4:%{php_min_version}
-Requires:	php-date
-Requires:	php-mysql
-Requires:	php-pcre
+Requires:	php(core) >= %{php_min_version}
+Requires:	php(date)
+Requires:	php(mysql)
+Requires:	php(pcre)
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
