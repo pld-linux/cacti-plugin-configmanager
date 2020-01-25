@@ -1,6 +1,5 @@
 %define		plugin configmanager
 %define		php_min_version 5.0.0
-%include	/usr/lib/rpm/macros.php
 Summary:	Plugin for Cacti - download/upload routers and switches configuration
 Summary(pl.UTF-8):	Wtyczka do Cacti - ściąganie/wysyłanie konfiguracji routerów/switchy
 Name:		cacti-plugin-%{plugin}
